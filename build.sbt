@@ -26,5 +26,5 @@ libraryDependencies <++= (scalaVersion) { scalaVersion =>
   )
 }
 
-
+seq(lsSettings :_*)
 
