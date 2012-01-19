@@ -68,7 +68,7 @@ import com.m3.promisedcache._
 implicit val cacheStore: CacheStore = new CacheStoreOnRedis(Seq("localhost:6379", "localhost:6378"))
 
 import com.m3.promisedcache.Imports._
-val v: sff4s.Future[String] = withCache("key") { "cached forever" }
+Val f: sff4s.Future[String] = withCache(12345, DateTime.now + 30.minutes) { "30 minutes cached" }
 ```
 
 ## Ehcache
@@ -80,7 +80,7 @@ val ehcache: Cache = new Cache("cacheName", 5000, false, false, 60, 60)
 implicit val cacheStore: CacheStore = new CacheStoreOnEhcache("name")
 
 import com.m3.promisedcache.Imports._
-val v: sff4s.Future[String] = withCache("key") { "cached forever" }
+Val f: sff4s.Future[String] = withCache(12345, DateTime.now + 30.minutes) { "30 minutes cached" }
 ```
 
 There is a choise between setting up with implicit parameters or initializing `Cache` instance.
@@ -88,7 +88,7 @@ There is a choise between setting up with implicit parameters or initializing `C
 ```scala
 import com.m3.promisedcache._
 val cache: PromisedCache = PromisedCache(new CacheStoreOnMemcached(Seq("localhost:11211")))
-val v: sff4s.Future[String] = cache.withCache("key") { "cached forever" }
+Val f: sff4s.Future[String] = cache.withCache(12345, DateTime.now + 30.minutes) { "30 minutes cached" }
 ```
 
 
