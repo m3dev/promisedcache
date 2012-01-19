@@ -47,6 +47,12 @@ libraryDependencies ++= Seq(
 )
 ```
 
+# ls.implicit.ly
+
+`PromisedCache` itself is available @ ls.implicit.ly
+
+http://ls.implicit.ly/m3dev/promisedcache
+
 
 # Usage
 
