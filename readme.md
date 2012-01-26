@@ -105,6 +105,30 @@ val f: sff4s.Future[HeavyOpsResult] = withCache(12345, DateTime.now + 30.minutes
 }
 ```
 
+## Collect Futures
+
+```scala
+val foo: Future[String] = withCache("foo", DateTime.now + 1.minute) {
+  "Scala is a general purpose programming language"
+}
+val bar: Future[String] = withCache("bar", DateTime.now + 1.minute) {
+  " designed to express common programming patterns"
+}
+val baz: Future[String] = withCache("baz", DateTime.now + 1.minute) {
+  " in a concise, elegant, and type-safe way."
+}
+
+val msg: Future[String] = for {
+  f <- foo
+  b <- bar
+  bz <- baz
+} yield f + b + bz
+
+println(msg())
+```
+
+## Initialize Cache instance
+
 There is a choise between setting up with implicit parameters or initializing `Cache` instance.
 
 ```scala
