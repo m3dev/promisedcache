@@ -20,7 +20,6 @@ libraryDependencies <++= (scalaVersion) { scalaVersion =>
     "spy"                     %  "spymemcached"         % "2.7.1"    % "provided",
     "redis.clients"           %  "jedis"                % "2.0.0"    % "provided",
     "net.sf.ehcache"          %  "ehcache"              % "1.5.0"    % "provided",
-    "ch.qos.logback"          %  "logback-classic"      % "1.0.0"    % "provided",
     "junit"                   %  "junit"                % "4.10"     % "test",
     "org.scalatest"           %% "scalatest"            % "1.6.1"    % "test"
   )
