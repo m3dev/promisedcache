@@ -31,10 +31,11 @@ case class CacheStoreOnRedis(addresses: Seq[String]) extends CacheStore {
 
   private val shards = new ArrayList[JedisShardInfo]
   addresses foreach {
-    address => {
-      val host :: port :: Nil = address.split(":").toList
-      shards.add(new JedisShardInfo(host, port.toInt))
-    }
+    address =>
+      {
+        val host :: port :: Nil = address.split(":").toList
+        shards.add(new JedisShardInfo(host, port.toInt))
+      }
   }
   private val redisPool = new ShardedJedisPool(new JedisPoolConfig(), shards)
 

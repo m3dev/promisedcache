@@ -8,7 +8,7 @@ import org.joda.time.DateTime
 
 import sff4s._
 import org.scala_tools.time.Imports._
-import net.sf.ehcache.{CacheManager, Cache}
+import net.sf.ehcache.{ CacheManager, Cache }
 
 @RunWith(classOf[JUnitRunner])
 class PromisedCacheWithEhcacheSuite extends FunSuite with ShouldMatchers {

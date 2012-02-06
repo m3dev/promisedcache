@@ -31,10 +31,11 @@ import util.control.Exception._
 case class CacheStoreOnMemcached(addresses: Seq[String]) extends CacheStore {
 
   private val inetAddresses: Seq[InetSocketAddress] = addresses map {
-    address => {
-      val host :: port :: Nil = address.split(":").toList
-      new InetSocketAddress(host, port.toInt)
-    }
+    address =>
+      {
+        val host :: port :: Nil = address.split(":").toList
+        new InetSocketAddress(host, port.toInt)
+      }
   }
   private val memcached = new MemcachedClient(inetAddresses.asJava)
 

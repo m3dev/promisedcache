@@ -29,10 +29,11 @@ trait CacheStore extends Logging {
    */
   def get[K, V](k: K): Option[V] = {
     allCatch withApply {
-      t => {
-        onGetFailure(t, k)
-        Option.empty
-      }
+      t =>
+        {
+          onGetFailure(t, k)
+          Option.empty
+        }
     } apply {
       val v = justGet(k)
       onGetSuccess(k, v)
