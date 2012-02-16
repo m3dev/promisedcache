@@ -7,18 +7,15 @@ object PromisedCacheBuild extends Build {
 
   lazy val mainSettings: Seq[Project.Setting[_]] = Defaults.defaultSettings ++ Seq(
     sbtPlugin := false,
-    organization := "com.m3.promisedcache",
+    organization := "com.m3",
     name := "promisedcache",
-    version := "0.1",
-    publishTo <<= (version) {
-      version: String =>
-        Some(
-          Resolver.file("GitHub Pages", Path.userHome / "github" / "m3dev.github.com" / "mvn-repo" / {
-            if (version.trim.endsWith("SNAPSHOT")) "snapshots" else "releases"
-          })
-        )
+    version := "0.2.0",
+    publishTo <<= version { (v: String) =>
+      val nexus = "https://oss.sonatype.org/"
+        if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
+        else Some("releases"  at nexus + "service/local/staging/deploy/maven2")
     },
-   publishMavenStyle := true,
+    publishMavenStyle := true,
     scalacOptions ++= Seq("-deprecation", "-unchecked")
   )
 

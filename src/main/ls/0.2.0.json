@@ -1,0 +1,33 @@
+{
+ "organization":"com.m3",
+ "name":"promisedcache",
+ "version":"0.2.0",
+ "description":"A caching library with sff4s.Future",
+ "site":"https://github.com/m3dev/promisedcache",
+ "tags":["future","caching"],
+ "docs":"https://github.com/m3dev/promisedcache",
+ "licenses": [{
+   "name": "Apache License, Version 2.0",
+   "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  }],
+ "resolvers": ["http://scala-tools.org/repo-releases"],
+ "dependencies": [{
+   "organization":"org.scala-tools.time",
+   "name": "time",
+   "version": "0.5"
+  },{
+   "organization":"com.eed3si9n",
+   "name": "sff4s-api",
+   "version": "0.1.1"
+  },{
+   "organization":"com.eed3si9n",
+   "name": "sff4s-actors",
+   "version": "0.1.1"
+  },{
+   "organization":"com.weiglewilczek.slf4s",
+   "name": "slf4s",
+   "version": "1.0.7"
+  }],
+ "scalas": ["2.9.1"],
+ "sbt": false
+}

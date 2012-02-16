@@ -10,40 +10,29 @@ Select your favorite cache.
 ## Memcached
 
 ```scala
-resolvers ++= Seq(
-  "m3dev.github.com"   at "http://m3dev.github.com/mvn-repo/releases",
-  "couchbase.com"      at "http://files.couchbase.com/maven2/"
-)
+resolvers += "couchbase.com" at "http://files.couchbase.com/maven2/"
 
 libraryDependencies ++= Seq(
-  "com.m3.promisedcache"    %% "promisedcache"   % "0.1",
-  "spy"                     %  "spymemcached"    % "2.7.1"
+  "com.m3" %% "promisedcache"   % "0.2.0",
+  "spy"    %  "spymemcached"    % "2.7.1"
 )
 ```
 
 ## Redis
 
 ```scala
-resolvers ++= Seq(
-  "m3dev.github.com"   at "http://m3dev.github.com/mvn-repo/releases"
-)
-
 libraryDependencies ++= Seq(
-  "com.m3.promisedcache"    %% "promisedcache"   % "0.1",
-  "redis.clients"           %  "jedis"           % "2.0.0"
+  "com.m3"        %% "promisedcache"   % "0.2.0",
+  "redis.clients" %  "jedis"           % "2.0.0"
 )
 ```
 
 ## Ehcache
 
 ```scala
-resolvers ++= Seq(
-  "m3dev.github.com"   at "http://m3dev.github.com/mvn-repo/releases"
-)
-
 libraryDependencies ++= Seq(
-  "com.m3.promisedcache"    %% "promisedcache"   % "0.1",
-  "net.sf.ehcache"          %  "ehcache"         % "1.5.0"
+  "com.m3"         %% "promisedcache"   % "0.2.0",
+  "net.sf.ehcache" %  "ehcache"         % "1.5.0"
 )
 ```
 
@@ -161,9 +150,3 @@ val f: sff4s.Future[HeavyOpsResult] = cache.withCache(12345, DateTime.now + 30.m
  http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-# Contributers
-
-* [Kazuhiro Sera](https://github.com/seratch)
-* [Toshiyuki Takahashi](https://github.com/tototoshi)
-* [Akira Ueda](https://github.com/akr4)
-* Takayuki Murata
